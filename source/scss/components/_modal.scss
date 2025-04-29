@@ -1,0 +1,223 @@
+.modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: rgba(18, 19, 23, .9);
+  display: flex;
+  pointer-events: none;
+  transition: all 400ms ease;
+  opacity: 0;
+  &-tab {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border: 1px solid #242730;
+    min-height: 48px;
+    border-radius: 12px;
+    overflow: hidden;
+    &-button {
+      grid-gap: 8px;
+      @include dfc;
+      text-align: center;
+      font-size: 10px;
+      font-weight: 600;
+      transition: all 400ms ease;
+      border-radius: inherit;
+      color: #7B808E;
+      svg, img {
+        fill: currentColor;
+      }
+      &--selected {
+        color: #fff;
+        background: var(--green-gradient);
+        @include gradient-border(
+          linear-gradient(#3DE592 0%, #268053 100%),
+          1px
+        )
+      }
+    }
+  }
+  &-container {
+    flex: 1;
+    padding: 12px;
+    width: 100%;
+    @include dfc;
+  }
+  &-policy {
+    font-size: 9px;
+    color: #4D5466;
+    a {
+      color: #43704F;
+      text-decoration: underline;
+      display: inline;
+    }
+  }
+  &-content {
+    max-width: 700px;
+    width: 100%;
+    border-radius: 18px;
+    overflow: hidden;
+    opacity: 0;
+    transform: scale(.95);
+    transition: all 300ms ease 300ms;
+  }
+  &-header {
+    &-title {
+      font-size: 18px;
+      font-weight: 700;
+    }
+  }
+  &-close {
+    @include dfc;
+    border-radius: 10px;
+    width: 28px;
+    height: 28px;
+    background-color: #242730;
+  }
+  &-form {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 15px;
+    &-socials {
+      @include dfc;
+      grid-gap: 8px;
+      &__btn {
+        @include dfc;
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        background-color: rgba(var(--clr-w), .1);
+        &--blue {
+          background-color: #1983FF
+        }
+        &--navy {
+          background-color: #40638B
+        }
+        &--white {
+          background-color: #fff;
+        }
+        &--red {
+          background-color: #EB6054
+        }
+      }
+    }
+    &-divider {
+      @include dfc;
+      grid-gap: 12px;
+      &__center {
+        font-size: 8px;
+        font-weight: 600;
+        color: #5F6471;
+      }
+      &__bar {
+        flex: 1;
+        height: 1px;
+        background-color: #242730;
+      }
+    }
+    &-enter {
+      background-image: var(--green-gradient);
+      min-height: 48px;
+      width: 100%;
+      font-size: 12px;
+      font-weight: 700;
+      @include dfc;
+      text-align: center;
+      border-radius: 12px;
+      @include gradient-border(
+        linear-gradient(#3DE592 0%, #268053 100%),
+        1px
+      )
+    }
+    &-label {
+      position: relative;
+      svg, img {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 16px;
+      }
+      input {
+        min-height: 48px;
+        background-color: #242730;
+        border-radius: 12px;
+        font-size: 10px;
+        padding: 0 24px 0 40px;
+        color: #fff;
+        &::placeholder {
+          color: #B1B5C2;
+        }
+      }
+    }
+  }
+  &-col {
+    &--content {
+      padding: 24px;
+      background-color: #17191E;
+      display: flex;
+      grid-gap: 10px;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    &--bg {
+      background-image: var(--green-gradient);
+
+      @include dfc;
+      position: relative;
+
+      & > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      &::after {
+        @include pseudo;
+        width: 100%;
+        height: 100%;
+        background-image: url("../img/modal/modalCol_bg.png");
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+  }
+  &-grid {
+    min-height: clamp(340px, 31.25vw, 500px);
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.modal {
+  &--opened {
+    opacity: 1;
+    pointer-events: all;
+
+    .modal-content {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+@include small-tablet {
+  .modal {
+    &-grid {
+      display: block;
+    }
+    &-col {
+      &--bg {
+        display: none;
+      }
+      &--content {
+        grid-gap: 28px;
+      }
+    }
+  }
+}

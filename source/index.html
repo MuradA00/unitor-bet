@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="En-en">
+@include('partials/head.html')
+@include('partials/components/auth-modal.html')
+
+<body>
+    <div class="layout">
+      <div class="layout-main">
+        <div class="layout-top">
+          @include("partials/components/header.html")
+        </div>
+        <div class="layout-bottom">
+          @include("partials/components/panel.html")
+          <div class="layout-content">
+            @include("partials/components/dashboard.html")
+            @include("partials/components/history.html")
+          </div>
+        </div>
+      </div>
+      @include("partials/components/chat.html")
+    </div>
+  <main>
+  </main>
+</body>
+</html>

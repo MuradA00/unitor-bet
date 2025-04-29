@@ -1,0 +1,128 @@
+.wheel {
+  --circle-wrapper: 794px;
+  background-color: #17191E;
+  border-radius: 16px;
+  position: relative;
+  min-height: 282px;
+  overflow: hidden;
+  width: 100%;
+  &::after,
+  &::before {
+    @include pseudo;
+    width: 260px;
+    height: 260px;
+    background-image: radial-gradient(#6C9B7B 0%, rgba(108, 155, 123, 0) 100%);
+    pointer-events: none;
+    border-radius: 50%;
+    opacity: .45;
+    filter: blur(44px);
+  }
+  &::before {
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%);
+  }
+  &::after {
+    right: 0;
+    bottom: 0;
+    transform: translate(50%, 50%);
+  }
+  &-panel {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 44px;
+    z-index: 4;
+    background-color: #13161B;
+    border-radius: 12px;
+    padding: 0 12px 12px 12px;
+  }
+  &-gradient {
+    position: absolute;
+    height: 30%;
+    background-image: linear-gradient(rgba(23, 25, 30, 0) 0%, #17191E 100%);
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    pointer-events: none;
+  }
+  &-play {
+    min-height: 30px;
+    margin: 0 auto 10px auto;
+    background: var(--green-gradient);
+    border-radius: 0 0 12px 12px;
+    @include dfc;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 600;
+    text-align: center;
+    padding: 0 16px;
+    text-transform: uppercase;
+  }
+  &-timer {
+    display: flex;
+    align-items: center;
+    grid-gap: 6px;
+    span {
+      color: #4E546D;
+      font-size: 12px;
+      font-weight: 500;
+    }
+    &-col {
+      display: flex;
+      align-items: center;
+      grid-gap: 6px;
+      font-size: 14px;
+      font-weight: 400;
+    }
+    &-unit {
+      background-color: #20232B;
+      border-radius: 8px;
+      @include dfc;
+      min-height: 34px;
+      min-width: 30px;
+    }
+  }
+  &-circle {
+    position: absolute;
+    top: 54px;
+    left: 50%;
+    z-index: 1;
+    width: 860px;
+    height: 860px;
+    z-index: 2;
+    transform: translateX(-50%);
+    transition: transform 400ms ease;
+    border-radius: 50%;
+    overflow: hidden;
+    &-polygon {
+      width: 100%;
+      height: 100%;
+    }
+    &_half {
+      --w: 894px;
+      width: var(--w);
+      min-width: var(--w);
+      left: 50%;
+      transform: translateX(-50%);
+      position: absolute;
+      top: 36px;
+      z-index: 2;
+    }
+  }
+}
+
+.box {
+  &-arrow {
+    position: absolute;
+    &--wheel {
+      z-index: 4;
+      top: 64px;
+      height: 82px;
+      img {
+        height: 100%;
+      }
+    }
+  }
+}

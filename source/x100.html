@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="En-en">
+  @include('partials/head.html')
+  <body>
+    <div class="layout">
+      <div class="layout-main">
+        <div class="layout-top">
+          @include("partials/components/header.html")
+        </div>
+        <div class="layout-bottom">
+          @include("partials/components/panel.html")
+          <div class="layout-content">
+            <div class="game-wrapper game-wrapper--wheel">
+              <div class="game-panel game-panel--sm">
+                <div class="game-panel-header">
+                  <div class="game-panel-header__aside">
+                    <div class="game-panel-header__name">
+                      <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.4254 7.16503C9.09959 6.71847 9.89038 6.48029 10.6991 6.48029C11.5078 6.48029 12.2986 6.71847 12.9728 7.16503L17.0879 3.04933C15.3033 1.53551 13.0392 0.704453 10.6991 0.704453C8.35896 0.704453 6.09494 1.53551 4.3103 3.04933L8.4254 7.16503Z" fill="white"/>
+                        <path d="M18.2547 4.21605L14.1396 8.33174C14.5861 9.00603 14.8243 9.79693 14.8243 10.6058C14.8243 11.4146 14.5861 12.2055 14.1396 12.8798L18.2547 16.9955C19.7683 15.2106 20.5993 12.9462 20.5993 10.6058C20.5993 8.2654 19.7683 6.00095 18.2547 4.21605Z" fill="white"/>
+                        <path d="M12.9728 14.0464C12.2986 14.4931 11.5078 14.7313 10.6991 14.7313C9.89038 14.7313 9.09959 14.4931 8.4254 14.0464L4.3103 18.1621C6.09494 19.676 8.35896 20.507 10.6991 20.507C13.0392 20.507 15.3033 19.676 17.0879 18.1621L12.9728 14.0464Z" fill="white"/>
+                        <path d="M7.25944 12.8798C6.81284 12.2055 6.5748 11.4146 6.5748 10.6058C6.5748 9.79693 6.81284 9.00603 7.25944 8.33174L3.14434 4.21605C1.63063 6.00095 0.799805 8.2654 0.799805 10.6058C0.799805 12.9462 1.63063 15.2106 3.14434 16.9955L7.25944 12.8798Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <span>x100</span>
+                  </div>
+                  <div class="game-panel-header__controls">
+                    <button class="game-panel-button button">
+                      <img src="img/icons/soundIcon.svg" alt="icon">
+                    </button>
+                    <button class="game-panel-button button">
+                      <img src="img/icons/checkedIcon.svg" alt="icon">
+                    </button>
+                    <button class="game-panel-button button">
+                      <img src="img/icons/gamePanelIcon.svg" alt="icon">
+                    </button>
+                  </div>
+                </div>
+                <div class="game-panel-inner">
+                  <div class="game-panel-box game-panel-bet">
+                    <div class="flex items-center jb">
+                      <span class="game-panel-label">
+                        Ставка
+                      </span>
+                      <div class="game-panel-flex flex items-center">
+                        <span class="game-panel-label">От 0.01 до 25 000</span>
+                        <img width="10" src="img/icons/coinsIcon_dark.svg" alt="icon">
+                      </div>
+                    </div>
+                    <div class="game-panel-bet__inner flex items-center jb gap-2">
+                      <div class="game-panel-bet__amount flex items-center gap-2">
+                        <img src="img/icons/coinsIcon.svg" alt="icon">
+                        <span>500</span>
+                      </div>
+                      <div class="game-panel-bet__multiplies game-panel-bet__multiplies--sm">
+                        <button class="game-panel-bet__multiplies-button button">
+                          +10
+                        </button>
+                        <button class="game-panel-bet__multiplies-button button">
+                          x2
+                        </button>
+                        <button class="game-panel-bet__multiplies-button button">
+                          1/2
+                        </button>
+                        <button class="game-panel-bet__multiplies-button game-panel-bet__multiplies-button--sm button">
+                          <img src="img/icons/cleanIcon.svg" alt="icon">
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="game-panel-box">
+                    <div class="game-history game-history--gradientless">
+                      <span class="game-history-label">История</span>
+                      <div class="game-history-inner">
+                        <ul class="game-history-list">
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--blue">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--green">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--blue">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--blue">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--blue">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--green">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--blue">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--blue">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--blue">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--green">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--blue">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--blue">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--blue">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--green">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--blue">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--blue">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--blue">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--green">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--blue">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--blue">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--blue">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--green">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--blue">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--blue">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--blue">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--green">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--blue">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--blue">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--blue">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--green">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--blue">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--blue">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--blue">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--green">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--blue">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--blue">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--blue">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--green">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--blue">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--blue">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--blue">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--green">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--blue">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--blue">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--red">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--purple">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--blue">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--green">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--blue">
+                          </li>
+                          <li class="game-history-item game-history-item--short game-history-item--yellow">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--blue">
+                          </li>
+                          <li class="game-history-item game-history-item--height game-history-item--purple">
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wheel">
+                <div class="box-arrow box-arrow--wheel">
+                  <img src="img/wheelDivider.svg" alt="icon">
+                </div>
+                <span class="wheel-gradient"></span>
+                <div class="wheel-game">
+                  <img src="img/cirlceWrapper.svg" alt="circle" class="wheel-circle_half">
+                  <div class="wheel-circle">
+                    <img class="wheel-circle-polygon" src="img/wheelImage.png" alt="image">
+                  </div>
+                </div>
+                <div class="wheel-panel">
+                  <button class="wheel-play">
+                    начало через
+                  </button>
+                  <div class="wheel-timer">
+                    <div class="wheel-timer-col">
+                      <div class="wheel-timer-unit">
+                        0
+                      </div>
+                      <div class="wheel-timer-unit">
+                        0
+                      </div>
+                    </div>
+                    <span>:</span>
+                    <div class="wheel-timer-col">
+                      <div class="wheel-timer-unit">
+                        0
+                      </div>
+                      <div class="wheel-timer-unit">
+                        0
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="game-multiplier">
+              <ul class="game-multiplier-cols">
+                <li class="game-multiplier-col">
+                  <div class="game-multiplier-header">
+                    <div class="game-multiplier-gradient game-multiplier-gradient--center game-multiplier-gradient--teal
+                    game-multiplier-gradient--teal_light">
+                      <span>
+                        x2
+                      </span>
+                    </div>
+                    <div class="game-multiplier-box">
+                      <div class="flex items-center gap-1">
+                        <div class="game-multiplier-box__icon">
+                          <svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.5248 7.06925C15.4175 7.06925 18.8873 7.77664 18.8873 10.6052C18.8873 11.8428 18.5718 12.02 17.941 12.02L12.9166 12.0211C13.047 11.6173 13.1123 11.1442 13.1123 10.6052C13.1123 9.18375 12.5915 8.0748 11.7331 7.25408C12.379 7.12206 13.0102 7.06925 13.5248 7.06925ZM6.0998 7.06925C7.99247 7.06925 11.4623 7.77664 11.4623 10.6052C11.4623 11.8428 11.1468 12.02 10.516 12.02H1.68363C1.05278 12.02 0.737305 11.8428 0.737305 10.6052C0.737305 7.77664 4.20714 7.06925 6.0998 7.06925ZM6.0998 0.880859C7.46722 0.880859 8.5748 1.98872 8.5748 3.35622C8.5748 4.72372 7.46722 5.83157 6.0998 5.83157C4.73239 5.83157 3.6248 4.72372 3.6248 3.35622C3.6248 1.98872 4.73239 0.880859 6.0998 0.880859ZM13.5248 0.880859C14.8922 0.880859 15.9998 1.98872 15.9998 3.35622C15.9998 4.72372 14.8922 5.83157 13.5248 5.83157C12.1574 5.83157 11.0498 4.72372 11.0498 3.35622C11.0498 1.98872 12.1574 0.880859 13.5248 0.880859Z" fill="#B1B5C2"/>
+                            </svg>
+
+                        </div>
+                        <span>24</span>
+                      </div>
+                      <div class="flex items-center gap-1">
+                        <span>59 200</span>
+                        <div class="game-multiplier-value">
+                          <img src="img/icons/coinsIcon.svg" alt="icon">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="game-multiplier-box">
+                    <div class="game-multiplier-user">
+                      <div class="game-multiplier-icon">
+                        <img src="img/gameMultiplierUser.png" alt="user">
+                      </div>
+                      <span>Никита</span>
+                    </div>
+                    <div class="game-multiplier-value">
+                      <span>500</span>
+                      <img src="img/icons/coinsIcon.svg" alt="icon">
+                    </div>
+                  </div>
+                  <div class="game-multiplier-box">
+                    <div class="game-multiplier-user">
+                      <div class="game-multiplier-icon">
+                        <img src="img/gameMultiplierUser.png" alt="user">
+                      </div>
+                      <span>Никита</span>
+                    </div>
+                    <div class="game-multiplier-value">
+                      <span>500</span>
+                      <img src="img/icons/coinsIcon.svg" alt="icon">
+                    </div>
+                  </div>
+                  <div class="game-multiplier-box">
+                    <div class="game-multiplier-user">
+                      <div class="game-multiplier-icon">
+                        <img src="img/gameMultiplierUser.png" alt="user">
+                      </div>
+                      <span>Никита</span>
+                    </div>
+                    <div class="game-multiplier-value">
+                      <span>500</span>
+                      <img src="img/icons/coinsIcon.svg" alt="icon">
+                    </div>
+                  </div>
+                  <div class="game-multiplier-box">
+                    <div class="game-multiplier-user">
+                      <div class="game-multiplier-icon">
+                        <img src="img/gameMultiplierUser.png" alt="user">
+                      </div>
+                      <span>Никита</span>
+                    </div>
+                    <div class="game-multiplier-value">
+                      <span>500</span>
+                      <img src="img/icons/coinsIcon.svg" alt="icon">
+                    </div>
+                  </div>
+                </li>
+                <li class="game-multiplier-col">
+                  <div class="game-multiplier-header">
+                    <div class="game-multiplier-gradient game-multiplier-gradient--green
+                    game-multiplier-gradient--center
+                    game-multiplier-gradient--green_light">
+                      <span>
+                        x3
+                      </span>
+                    </div>
+                    <div class="game-multiplier-box">
+                      <div class="flex items-center gap-1">
+                        <div class="game-multiplier-box__icon">
+                          <svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.5248 7.06925C15.4175 7.06925 18.8873 7.77664 18.8873 10.6052C18.8873 11.8428 18.5718 12.02 17.941 12.02L12.9166 12.0211C13.047 11.6173 13.1123 11.1442 13.1123 10.6052C13.1123 9.18375 12.5915 8.0748 11.7331 7.25408C12.379 7.12206 13.0102 7.06925 13.5248 7.06925ZM6.0998 7.06925C7.99247 7.06925 11.4623 7.77664 11.4623 10.6052C11.4623 11.8428 11.1468 12.02 10.516 12.02H1.68363C1.05278 12.02 0.737305 11.8428 0.737305 10.6052C0.737305 7.77664 4.20714 7.06925 6.0998 7.06925ZM6.0998 0.880859C7.46722 0.880859 8.5748 1.98872 8.5748 3.35622C8.5748 4.72372 7.46722 5.83157 6.0998 5.83157C4.73239 5.83157 3.6248 4.72372 3.6248 3.35622C3.6248 1.98872 4.73239 0.880859 6.0998 0.880859ZM13.5248 0.880859C14.8922 0.880859 15.9998 1.98872 15.9998 3.35622C15.9998 4.72372 14.8922 5.83157 13.5248 5.83157C12.1574 5.83157 11.0498 4.72372 11.0498 3.35622C11.0498 1.98872 12.1574 0.880859 13.5248 0.880859Z" fill="#B1B5C2"/>
+                            </svg>
+
+                        </div>
+                        <span>24</span>
+                      </div>
+                      <div class="flex items-center gap-1">
+                        <span>59 200</span>
+                        <div class="game-multiplier-value">
+                          <img src="img/icons/coinsIcon.svg" alt="icon">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="game-multiplier-box">
+                    <div class="game-multiplier-user">
+                      <div class="game-multiplier-icon">
+                        <img src="img/gameMultiplierUser.png" alt="user">
+                      </div>
+                      <span>Никита</span>
+                    </div>
+                    <div class="game-multiplier-value">
+                      <span>500</span>
+                      <img src="img/icons/coinsIcon.svg" alt="icon">
+                    </div>
+                  </div>
+                  <div class="game-multiplier-box">
+                    <div class="game-multiplier-user">
+                      <div class="game-multiplier-icon">
+                        <img src="img/gameMultiplierUser.png" alt="user">
+                      </div>
+                      <span>Никита</span>
+                    </div>
+                    <div class="game-multiplier-value">
+                      <span>500</span>
+                      <img src="img/icons/coinsIcon.svg" alt="icon">
+                    </div>
+                  </div>
+                  <div class="game-multiplier-box">
+                    <div class="game-multiplier-user">
+                      <div class="game-multiplier-icon">
+                        <img src="img/gameMultiplierUser.png" alt="user">
+                      </div>
+                      <span>Никита</span>
+                    </div>
+                    <div class="game-multiplier-value">
+                      <span>500</span>
+                      <img src="img/icons/coinsIcon.svg" alt="icon">
+                    </div>
+                  </div>
+                  <div class="game-multiplier-box">
+                    <div class="game-multiplier-user">
+                      <div class="game-multiplier-icon">
+                        <img src="img/gameMultiplierUser.png" alt="user">
+                      </div>
+                      <span>Никита</span>
+                    </div>
+                    <div class="game-multiplier-value">
+                      <span>500</span>
+                      <img src="img/icons/coinsIcon.svg" alt="icon">
+                    </div>
+                  </div>
+                </li>
+                <li class="game-multiplier-col">
+                  <div class="game-multiplier-header">
+                    <div class="game-multiplier-gradient game-multiplier-gradient--purple
+                    game-multiplier-gradient--center
+                    game-multiplier-gradient--purple_light">
+                      <span>
+                        x5
+                      </span>
+                    </div>
+                    <div class="game-multiplier-box">
+                      <div class="flex items-center gap-1">
+                        <div class="game-multiplier-box__icon">
+                          <svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.5248 7.06925C15.4175 7.06925 18.8873 7.77664 18.8873 10.6052C18.8873 11.8428 18.5718 12.02 17.941 12.02L12.9166 12.0211C13.047 11.6173 13.1123 11.1442 13.1123 10.6052C13.1123 9.18375 12.5915 8.0748 11.7331 7.25408C12.379 7.12206 13.0102 7.06925 13.5248 7.06925ZM6.0998 7.06925C7.99247 7.06925 11.4623 7.77664 11.4623 10.6052C11.4623 11.8428 11.1468 12.02 10.516 12.02H1.68363C1.05278 12.02 0.737305 11.8428 0.737305 10.6052C0.737305 7.77664 4.20714 7.06925 6.0998 7.06925ZM6.0998 0.880859C7.46722 0.880859 8.5748 1.98872 8.5748 3.35622C8.5748 4.72372 7.46722 5.83157 6.0998 5.83157C4.73239 5.83157 3.6248 4.72372 3.6248 3.35622C3.6248 1.98872 4.73239 0.880859 6.0998 0.880859ZM13.5248 0.880859C14.8922 0.880859 15.9998 1.98872 15.9998 3.35622C15.9998 4.72372 14.8922 5.83157 13.5248 5.83157C12.1574 5.83157 11.0498 4.72372 11.0498 3.35622C11.0498 1.98872 12.1574 0.880859 13.5248 0.880859Z" fill="#B1B5C2"/>
+                            </svg>
+
+                        </div>
+                        <span>24</span>
+                      </div>
+                      <div class="flex items-center gap-1">
+                        <span>59 200</span>
+                        <div class="game-multiplier-value">
+                          <img src="img/icons/coinsIcon.svg" alt="icon">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="game-multiplier-box">
+                    <div class="game-multiplier-user">
+                      <div class="game-multiplier-icon">
+                        <img src="img/gameMultiplierUser.png" alt="user">
+                      </div>
+                      <span>Никита</span>
+                    </div>
+                    <div class="game-multiplier-value">
+                      <span>500</span>
+                      <img src="img/icons/coinsIcon.svg" alt="icon">
+                    </div>
+                  </div>
+                  <div class="game-multiplier-box">
+                    <div class="game-multiplier-user">
+                      <div class="game-multiplier-icon">
+                        <img src="img/gameMultiplierUser.png" alt="user">
+                      </div>
+                      <span>Никита</span>
+                    </div>
+                    <div class="game-multiplier-value">
+                      <span>500</span>
+                      <img src="img/icons/coinsIcon.svg" alt="icon">
+                    </div>
+                  </div>
+                  <div class="game-multiplier-box">
+                    <div class="game-multiplier-user">
+                      <div class="game-multiplier-icon">
+                        <img src="img/gameMultiplierUser.png" alt="user">
+                      </div>
+                      <span>Никита</span>
+                    </div>
+                    <div class="game-multiplier-value">
+                      <span>500</span>
+                      <img src="img/icons/coinsIcon.svg" alt="icon">
+                    </div>
+                  </div>
+                  <div class="game-multiplier-box">
+                    <div class="game-multiplier-user">
+                      <div class="game-multiplier-icon">
+                        <img src="img/gameMultiplierUser.png" alt="user">
+                      </div>
+                      <span>Никита</span>
+                    </div>
+                    <div class="game-multiplier-value">
+                      <span>500</span>
+                      <img src="img/icons/coinsIcon.svg" alt="icon">
+                    </div>
+                  </div>
+                </li>
+                <li class="game-multiplier-col">
+                  <div class="game-multiplier-header">
+                    <div class="game-multiplier-gradient game-multiplier-gradient--orange
+                    game-multiplier-gradient--orange_light
+                    game-multiplier-gradient--center">
+                      <span>
+                        x7
+                      </span>
+                    </div>
+                    <div class="game-multiplier-box">
+                      <div class="flex items-center gap-1">
+                        <div class="game-multiplier-box__icon">
+                          <svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.5248 7.06925C15.4175 7.06925 18.8873 7.77664 18.8873 10.6052C18.8873 11.8428 18.5718 12.02 17.941 12.02L12.9166 12.0211C13.047 11.6173 13.1123 11.1442 13.1123 10.6052C13.1123 9.18375 12.5915 8.0748 11.7331 7.25408C12.379 7.12206 13.0102 7.06925 13.5248 7.06925ZM6.0998 7.06925C7.99247 7.06925 11.4623 7.77664 11.4623 10.6052C11.4623 11.8428 11.1468 12.02 10.516 12.02H1.68363C1.05278 12.02 0.737305 11.8428 0.737305 10.6052C0.737305 7.77664 4.20714 7.06925 6.0998 7.06925ZM6.0998 0.880859C7.46722 0.880859 8.5748 1.98872 8.5748 3.35622C8.5748 4.72372 7.46722 5.83157 6.0998 5.83157C4.73239 5.83157 3.6248 4.72372 3.6248 3.35622C3.6248 1.98872 4.73239 0.880859 6.0998 0.880859ZM13.5248 0.880859C14.8922 0.880859 15.9998 1.98872 15.9998 3.35622C15.9998 4.72372 14.8922 5.83157 13.5248 5.83157C12.1574 5.83157 11.0498 4.72372 11.0498 3.35622C11.0498 1.98872 12.1574 0.880859 13.5248 0.880859Z" fill="#B1B5C2"/>
+                            </svg>
+
+                        </div>
+                        <span>24</span>
+                      </div>
+                      <div class="flex items-center gap-1">
+                        <span>59 200</span>
+                        <div class="game-multiplier-value">
+                          <img src="img/icons/coinsIcon.svg" alt="icon">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="game-multiplier-box">
+                    <div class="game-multiplier-user">
+                      <div class="game-multiplier-icon">
+                        <img src="img/gameMultiplierUser.png" alt="user">
+                      </div>
+                      <span>Никита</span>
+                    </div>
+                    <div class="game-multiplier-value">
+                      <span>500</span>
+                      <img src="img/icons/coinsIcon.svg" alt="icon">
+                    </div>
+                  </div>
+                  <div class="game-multiplier-box">
+                    <div class="game-multiplier-user">
+                      <div class="game-multiplier-icon">
+                        <img src="img/gameMultiplierUser.png" alt="user">
+                      </div>
+                      <span>Никита</span>
+                    </div>
+                    <div class="game-multiplier-value">
+                      <span>500</span>
+                      <img src="img/icons/coinsIcon.svg" alt="icon">
+                    </div>
+                  </div>
+                  <div class="game-multiplier-box">
+                    <div class="game-multiplier-user">
+                      <div class="game-multiplier-icon">
+                        <img src="img/gameMultiplierUser.png" alt="user">
+                      </div>
+                      <span>Никита</span>
+                    </div>
+                    <div class="game-multiplier-value">
+                      <span>500</span>
+                      <img src="img/icons/coinsIcon.svg" alt="icon">
+                    </div>
+                  </div>
+                  <div class="game-multiplier-box">
+                    <div class="game-multiplier-user">
+                      <div class="game-multiplier-icon">
+                        <img src="img/gameMultiplierUser.png" alt="user">
+                      </div>
+                      <span>Никита</span>
+                    </div>
+                    <div class="game-multiplier-value">
+                      <span>500</span>
+                      <img src="img/icons/coinsIcon.svg" alt="icon">
+                    </div>
+                  </div>
+                </li>
+                <li class="game-multiplier-col">
+                  <div class="game-multiplier-header">
+                    <div class="game-multiplier-gradient game-multiplier-gradient--red
+                    game-multiplier-gradient--red_light
+                    game-multiplier-gradient--center">
+                      <span>
+                        x14
+                      </span>
+                    </div>
+                    <div class="game-multiplier-box">
+                      <div class="flex items-center gap-1">
+                        <div class="game-multiplier-box__icon">
+                          <svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.5248 7.06925C15.4175 7.06925 18.8873 7.77664 18.8873 10.6052C18.8873 11.8428 18.5718 12.02 17.941 12.02L12.9166 12.0211C13.047 11.6173 13.1123 11.1442 13.1123 10.6052C13.1123 9.18375 12.5915 8.0748 11.7331 7.25408C12.379 7.12206 13.0102 7.06925 13.5248 7.06925ZM6.0998 7.06925C7.99247 7.06925 11.4623 7.77664 11.4623 10.6052C11.4623 11.8428 11.1468 12.02 10.516 12.02H1.68363C1.05278 12.02 0.737305 11.8428 0.737305 10.6052C0.737305 7.77664 4.20714 7.06925 6.0998 7.06925ZM6.0998 0.880859C7.46722 0.880859 8.5748 1.98872 8.5748 3.35622C8.5748 4.72372 7.46722 5.83157 6.0998 5.83157C4.73239 5.83157 3.6248 4.72372 3.6248 3.35622C3.6248 1.98872 4.73239 0.880859 6.0998 0.880859ZM13.5248 0.880859C14.8922 0.880859 15.9998 1.98872 15.9998 3.35622C15.9998 4.72372 14.8922 5.83157 13.5248 5.83157C12.1574 5.83157 11.0498 4.72372 11.0498 3.35622C11.0498 1.98872 12.1574 0.880859 13.5248 0.880859Z" fill="#B1B5C2"/>
+                            </svg>
+
+                        </div>
+                        <span>24</span>
+                      </div>
+                      <div class="flex items-center gap-1">
+                        <span>59 200</span>
+                        <div class="game-multiplier-value">
+                          <img src="img/icons/coinsIcon.svg" alt="icon">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="game-multiplier-box">
+                    <div class="game-multiplier-user">
+                      <div class="game-multiplier-icon">
+                        <img src="img/gameMultiplierUser.png" alt="user">
+                      </div>
+                      <span>Никита</span>
+                    </div>
+                    <div class="game-multiplier-value">
+                      <span>500</span>
+                      <img src="img/icons/coinsIcon.svg" alt="icon">
+                    </div>
+                  </div>
+                  <div class="game-multiplier-box">
+                    <div class="game-multiplier-user">
+                      <div class="game-multiplier-icon">
+                        <img src="img/gameMultiplierUser.png" alt="user">
+                      </div>
+                      <span>Никита</span>
+                    </div>
+                    <div class="game-multiplier-value">
+                      <span>500</span>
+                      <img src="img/icons/coinsIcon.svg" alt="icon">
+                    </div>
+                  </div>
+                  <div class="game-multiplier-box">
+                    <div class="game-multiplier-user">
+                      <div class="game-multiplier-icon">
+                        <img src="img/gameMultiplierUser.png" alt="user">
+                      </div>
+                      <span>Никита</span>
+                    </div>
+                    <div class="game-multiplier-value">
+                      <span>500</span>
+                      <img src="img/icons/coinsIcon.svg" alt="icon">
+                    </div>
+                  </div>
+                  <div class="game-multiplier-box">
+                    <div class="game-multiplier-user">
+                      <div class="game-multiplier-icon">
+                        <img src="img/gameMultiplierUser.png" alt="user">
+                      </div>
+                      <span>Никита</span>
+                    </div>
+                    <div class="game-multiplier-value">
+                      <span>500</span>
+                      <img src="img/icons/coinsIcon.svg" alt="icon">
+                    </div>
+                  </div>
+                </li>
+                <li class="game-multiplier-col">
+                  <div class="game-multiplier-header">
+                    <div class="game-multiplier-gradient game-multiplier-gradient--yellow game-multiplier-gradient--center">
+                      <span>
+                        x30
+                      </span>
+                    </div>
+                    <div class="game-multiplier-box">
+                      <div class="flex items-center gap-1">
+                        <div class="game-multiplier-box__icon">
+                          <svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.5248 7.06925C15.4175 7.06925 18.8873 7.77664 18.8873 10.6052C18.8873 11.8428 18.5718 12.02 17.941 12.02L12.9166 12.0211C13.047 11.6173 13.1123 11.1442 13.1123 10.6052C13.1123 9.18375 12.5915 8.0748 11.7331 7.25408C12.379 7.12206 13.0102 7.06925 13.5248 7.06925ZM6.0998 7.06925C7.99247 7.06925 11.4623 7.77664 11.4623 10.6052C11.4623 11.8428 11.1468 12.02 10.516 12.02H1.68363C1.05278 12.02 0.737305 11.8428 0.737305 10.6052C0.737305 7.77664 4.20714 7.06925 6.0998 7.06925ZM6.0998 0.880859C7.46722 0.880859 8.5748 1.98872 8.5748 3.35622C8.5748 4.72372 7.46722 5.83157 6.0998 5.83157C4.73239 5.83157 3.6248 4.72372 3.6248 3.35622C3.6248 1.98872 4.73239 0.880859 6.0998 0.880859ZM13.5248 0.880859C14.8922 0.880859 15.9998 1.98872 15.9998 3.35622C15.9998 4.72372 14.8922 5.83157 13.5248 5.83157C12.1574 5.83157 11.0498 4.72372 11.0498 3.35622C11.0498 1.98872 12.1574 0.880859 13.5248 0.880859Z" fill="#B1B5C2"/>
+                            </svg>
+
+                        </div>
+                        <span>24</span>
+                      </div>
+                      <div class="flex items-center gap-1">
+                        <span>59 200</span>
+                        <div class="game-multiplier-value">
+                          <img src="img/icons/coinsIcon.svg" alt="icon">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="game-multiplier-box">
+                    <div class="game-multiplier-user">
+                      <div class="game-multiplier-icon">
+                        <img src="img/gameMultiplierUser.png" alt="user">
+                      </div>
+                      <span>Никита</span>
+                    </div>
+                    <div class="game-multiplier-value">
+                      <span>500</span>
+                      <img src="img/icons/coinsIcon.svg" alt="icon">
+                    </div>
+                  </div>
+                  <div class="game-multiplier-box">
+                    <div class="game-multiplier-user">
+                      <div class="game-multiplier-icon">
+                        <img src="img/gameMultiplierUser.png" alt="user">
+                      </div>
+                      <span>Никита</span>
+                    </div>
+                    <div class="game-multiplier-value">
+                      <span>500</span>
+                      <img src="img/icons/coinsIcon.svg" alt="icon">
+                    </div>
+                  </div>
+                  <div class="game-multiplier-box">
+                    <div class="game-multiplier-user">
+                      <div class="game-multiplier-icon">
+                        <img src="img/gameMultiplierUser.png" alt="user">
+                      </div>
+                      <span>Никита</span>
+                    </div>
+                    <div class="game-multiplier-value">
+                      <span>500</span>
+                      <img src="img/icons/coinsIcon.svg" alt="icon">
+                    </div>
+                  </div>
+                  <div class="game-multiplier-box">
+                    <div class="game-multiplier-user">
+                      <div class="game-multiplier-icon">
+                        <img src="img/gameMultiplierUser.png" alt="user">
+                      </div>
+                      <span>Никита</span>
+                    </div>
+                    <div class="game-multiplier-value">
+                      <span>500</span>
+                      <img src="img/icons/coinsIcon.svg" alt="icon">
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      @include("partials/components/chat.html")
+    </div>
+  </body>
+</html>

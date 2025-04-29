@@ -1,0 +1,240 @@
+
+
+.dashboard {
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: clamp(10px, 1.25vw, 20px);
+  }
+  &-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    will-change: transform;
+    transition: transform 300ms ease;
+
+    pointer-events: none;
+  }
+  &-block {
+    padding: 30px;
+    background-color: rgba(var(--clr-b), 1);
+    min-height: 200px;
+    border-radius: 16px;
+    overflow: hidden;
+
+    display: flex;
+
+    position: relative;
+    &--span {
+      padding: 40px 30px;
+      grid-column: span 2;
+      min-height: 308px;
+      &:nth-child(2) {
+        background-image: linear-gradient(to bottom, #0A2679 0%, #4599DA 100%);
+      }
+    }
+    @include hover {
+      .dashboard-bg {
+        transform: scale(1.1);
+      }
+    }
+  }
+  &-link {
+    text-align: center;
+    @include dfc;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    width: fit-content;
+    padding: 0 18px;
+    background-color: rgba(var(--clr-w), .03);
+    min-height: 36px;
+    border-radius: 8px;
+    &--light {
+      min-height: 44px;
+      background-color: rgba(var(--clr-w), 1);
+      min-width: 200px;
+      border-radius: 10px;
+      color: #367CC1;
+      font-size: 12px;
+    }
+  }
+  &-object {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 30px;
+    max-width: 290px;
+  }
+  &-content {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &-nested {
+    max-width: 290px;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 6px;
+  }
+  &-description {
+    color: #A3CAFF;
+    font-size: 14px;
+    line-height: 120%;
+  }
+  &-title {
+    position: relative;
+    z-index: 1;
+    font-size: clamp(14px, 1.125vw, 18px);
+    font-weight: 600;
+    text-transform: uppercase;
+    align-self: flex-end;
+    line-height: 100%;
+    &--xl {
+      align-self: initial;
+      font-size: 24px;
+      line-height: 130%;
+      text-transform: capitalize;
+    }
+  }
+}
+
+.tours {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 70px;
+  padding: 0 14px 0 8px;
+
+  background-image: linear-gradient(to left, #7EB28E 0%, #3D6A4A 100%);
+  border-radius: 16px;
+  &-cta {
+    background-color: #629471;
+    @include dfc;
+    padding: 0 18px;
+    min-height: 42px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  &-flex {
+    display: flex;
+    align-items: center;
+    grid-gap: 16px;
+
+    span {
+      color: #B5E5C3;
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+  &-icon {
+    background-color: #355C40;
+    width: 54px;
+    aspect-ratio: 1;
+    @include dfc;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 1480px) {
+  .dashboard {
+    &-grid {
+      grid-gap: 12px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &-block {
+      min-height: 140px;
+      padding: 18px;
+      border-radius: 10px;
+      &--span {
+        min-height: 180px;
+      }
+    }
+    &-object {
+      max-width: 180px;
+      right: 12px;
+    }
+    &-description {
+      font-size: 12px;
+    }
+    &-title {
+      &--xl {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@include small-tablet {
+  .tours {
+    @include gradient-border(
+      linear-gradient(to right, #3E6B4B 0%, #96D6AA 100%),
+      1px
+    );
+    background: #497756;
+    min-height: 56px;
+    padding: 0 12px;
+    &-flex {
+      grid-gap: 10px;
+      span {
+        font-size: 10px;
+      }
+    }
+    &-cta {
+      padding: 0 14px;
+      font-size: 8px;
+    }
+    &-icon {
+      width: 40px;
+      height: 40px;
+      img, svg {
+        max-width: 18px;
+      }
+    }
+  }
+  .dashboard {
+    &-block {
+      border-radius: 10px;
+      &:not(.dashboard-block--span) {
+        min-height: 112px;
+      }
+      &--span {
+        min-height: 150px;
+      }
+    }
+    &-content {
+      grid-gap: 14px;
+    }
+    &-object {
+      max-width: 130px;
+      right: 28px;
+    }
+    &-nested {
+      max-width: 200px;
+    }
+    &-title {
+      font-size: 12px;
+    }
+    &-link {
+      min-height: 30px;
+      font-size: 8px;
+      padding: 0 8px;
+      &--light {
+        min-height: 34px;
+        min-width: 120px;
+        font-size: 8px;
+      }
+    }
+    &-description{
+      font-size: 10px;
+    }
+  }
+}

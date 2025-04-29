@@ -1,0 +1,75 @@
+.history {
+  &-divider {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+}
+
+.table {
+  font-size: 12px;
+  font-weight: 700;
+  &-header {
+    margin-bottom: 20px;
+
+    color: #77797F;
+    text-transform: uppercase;
+  }
+  &-flex {
+    display: flex;
+    align-items: center;
+    grid-gap: 10px;
+    justify-content: center;
+    text-transform: capitalize;
+    text-align: center;
+  }
+  &-coeff {
+    position: relative;
+
+    &_back {
+      font-size: 24px;
+      text-transform: lowercase;
+      opacity: .07;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  &-rows {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 14px;
+    .table {
+      &-row {
+        background-color: var(--bg-chat);
+        min-height: 58px;
+        padding: 0 12px;
+        border-radius: 14px;
+
+        text-transform: uppercase;
+      }
+    }
+  }
+  &-user {
+    width: 32px;
+    aspect-ratio: 1;
+    img {
+      width: inherit;
+      height: inherit;
+    }
+  }
+  &-row {
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    & > * {
+      text-align: center;
+    }
+  }
+}
+
+@include laptop {
+  .table {
+    display: none;
+  }
+}

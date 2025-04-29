@@ -1,0 +1,119 @@
+.panel {
+  --offset: var(--layout-bottom-pt) + var(--header-h);
+  position: fixed;
+  height: 100%;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  left: 30px;
+  top: calc(var(--offset));
+  height: calc(100% - (var(--offset)))
+}
+
+.sidebar {
+  --icon-clr: #77797F;
+  background-color: var(--bg-chat);
+  padding: 12px;
+  border-radius: 120px;
+  display: block;
+  &-link {
+    width: 52px;
+    aspect-ratio: 1;
+    position: relative;
+    border-radius: 50%;
+
+    @include dfc;
+    @include hover {
+      --icon-clr: #fff;
+    }
+
+    svg, img {
+      transition: fill 400ms ease;
+      fill: var(--icon-clr);
+    }
+
+    &--selected {
+      --icon-clr: #fff;
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+  &-icon {
+    width: 24px;
+    aspect-ratio: 1;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+@include desktop {
+  .panel {
+    left: 16px;
+  }
+}
+
+@include laptop {
+  .panel {
+    display: none;
+  }
+}
+
+.lang {
+  border-radius: 112px;
+  background-color: #17191E;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  &-list {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 22px;
+    height: 0;
+    transition: all 400ms ease;
+    padding: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+  &-flag {
+    background-color: transparent;
+    transition: box-shadow 400ms ease;
+    &:not(.lang-selected) {
+      @include hover {
+        box-shadow: 0 0 0 14px #1E2027;
+      }
+      cursor: pointer;
+      border-radius: 50%;
+    }
+    img {
+      border-radius: inherit;
+      width: 30px;
+      aspect-ratio: 1;
+    }
+  }
+  &-selected {
+    width: 100%;
+    height: 100%;
+    @include dfc;
+    padding: 20px 0;
+    border-top: 1px solid transparent;
+    transition: border-color 400ms ease;
+  }
+  @include hover {
+    .lang-selected {
+      border-color:  #24272E;
+    }
+    .lang-list {
+      height: 176px;
+      padding: 22px 0;
+      pointer-events: all;
+      opacity: 1;
+    }
+  }
+}

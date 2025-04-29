@@ -1,0 +1,62 @@
+
+
+.keno {
+  --ratio: 80px;
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--ratio), 1fr));
+    grid-gap: clamp(8px, 1vw, 16px);
+
+    & > * {
+      font-weight: 500;
+      min-height: var(--ratio);
+      aspect-ratio: 1;
+      background-color: #1E2127;
+      border-radius: 20px;
+      border: 1px solid #272A34;
+      @include dfc;
+      text-align: center;
+      color: #B1B5C2;
+      font-size: 24px;
+
+      cursor: pointer;
+      will-change: transform;
+      transition: transform 300ms ease;
+
+      @include hover {
+        transform: scale(1.075);
+      }
+    }
+  }
+}
+
+@media (max-width: 1440px) {
+  .keno {
+    --ratio: 64px;
+  }
+}
+
+@media (max-width: 1040px) {
+  .keno {
+    --ratio: 48px;
+    &-grid {
+      li {
+        font-size: 18px;
+        border-radius: 12px;
+      }
+    }
+  }
+}
+
+@include small-tablet {
+  .keno {
+    --ratio: 36px;
+    &-grid {
+      grid-gap: 8px;
+      li {
+        border-radius: 8px;
+        font-size: 10px;
+      }
+    }
+  }
+}

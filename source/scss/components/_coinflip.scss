@@ -1,0 +1,136 @@
+.coinflip {
+  --center-ratio: 280px;
+  --border-clr: #25262C;
+  .box {
+    padding: 34px clamp(16px, 2.625vw, 42px);
+  }
+  &-game {
+    display: flex;
+    align-items: center;
+    align-items: center;
+    grid-gap: 24px;
+    align-items: center;
+    &__center {
+      width: 100%;
+      margin: 0 auto;
+      max-width: var(--center-ratio);
+      border-radius: 50%;
+      @include dfc;
+      border: 1px solid var(--border-clr);
+      aspect-ratio: 1;
+      position: relative;
+      &::after {
+        @include pseudo;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 1px;
+        pointer-events: none;
+        background-color: var(--border-clr);
+      }
+
+      img {
+        position: relative;
+        z-index: 1;
+        width: 60%;
+        aspect-ratio: 1;
+        margin: 0 auto;
+      }
+    }
+    &__coin {
+      display: flex;
+      align-items: center;
+      grid-gap: 10px;
+      width: 100%;
+      max-width: clamp(160px, 12.5vw, 200px);
+      min-height: 72px;
+      padding: 0 12px;
+      background-image: linear-gradient(#242730 0%, #1E2127 100%);
+      border-radius: 110px;
+      img, svg {
+        max-width: 48px;
+      }
+      font-size: 14px;
+      font-weight: 700;
+      &-name {
+        position: relative;
+        span {
+          position: relative;
+          z-index: 1;
+        }
+        &::after {
+          content: attr(data-content);
+          position: absolute;
+          color: #2B2E37;
+          font-size: 24px;
+          font-weight: 700;
+          top: 50%;
+          transform: translateY(-50%);
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
+
+[data-content="Tails"] {
+  &::after {
+    left: -5px;
+  }
+}
+
+[data-content="Heads"] {
+  margin: 0 auto;
+  &::after {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (max-width: 1640px) {
+  .coinflip {
+    &-game {
+      display: grid;
+      grid-gap: 28px 20px;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+      "center center"
+      "tails heads";
+      &__center {
+        grid-area: center;
+      }
+      &__coin {
+        max-width: 100%;
+        &--tails {
+          grid-area: tails;
+        }
+        &--heads {
+          grid-area: heads;
+        }
+      }
+    }
+  }
+}
+
+@include laptop {
+  .coinflip {
+    &-game {
+      &__center {
+        max-width: 220px;
+      }
+      &__coin {
+        min-height: 56px;
+        &-name {
+          font-size: 12px;
+          &::after {
+            font-size: 18px;
+          }
+        }
+        img {
+          max-width: 38px;
+        }
+      }
+    }
+  }
+}

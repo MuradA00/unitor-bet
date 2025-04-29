@@ -1,0 +1,222 @@
+.mines {
+  --card-bg-accent: #{HexToRGB(#1E2127)};
+  &-game {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    grid-gap: 24px;
+    &__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+      align-items: center;
+      grid-gap: 16px;
+    }
+    &__icon {
+      width: 60px;
+      aspect-ratio: 1;
+      @include dfc;
+      margin-bottom: 12px;
+      border-radius: 16px;
+
+      background-color: var(--icon-box-bg);
+      img {
+        max-width: 44px;
+      }
+    }
+    &__title {
+      font-size: 14px;
+      font-weight: 700;
+    }
+    &__inner {
+      display: flex;
+      flex-direction: column;
+      grid-gap: 8px;
+    }
+    &__description {
+      font-size: 8px;
+      font-weight: 500;
+      color: #68737D;
+    }
+    &__col {
+      padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      max-width: 130px;
+      min-height: 140px;
+      flex: 1;
+      border: 1px solid #242935;
+      border-radius: 20px;
+      position: relative;
+      &::after {
+        @include pseudo;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-image: linear-gradient(
+          to top, var(--bg) 0%,
+          rgba(var(--card-bg-accent), 0) 100%
+        );
+        border-radius: inherit;
+        opacity: 0.05;
+        pointer-events: none;
+      }
+
+      &--green {
+        --clr: #54B466;
+        --bg: #659D46;
+        --mark-icon-bg: #3F974F;
+        --icon-box-bg: #202729;
+      }
+      &--red {
+        --mark-icon-bg: #B24440;
+        --clr: #D24E49;
+        --bg: #D24E49;
+        --icon-box-bg: #262228;
+
+        p {
+          color: #9F97A8 !important;
+        }
+      }
+    }
+    &__mark {
+      min-height: 32px;
+      border-radius: 6px 6px 0 0;
+      padding: 0 10px;
+      display: flex;
+      align-items: center;
+      font-size: 10px;
+      font-weight: 700;
+      background-color: var(--clr);
+      margin: 0 auto;
+      width: fit-content;
+      grid-gap: 4px;
+      &-icon {
+        border-radius: 6px;
+        @include dfc;
+        width: 18px;
+        aspect-ratio: 1;
+        background-color: var(--mark-icon-bg);
+
+        svg {
+          width: 10px;
+          height: 10px;
+          fill: rgba(var(--clr-w), 1);
+        }
+      }
+    }
+    &__card {
+      min-height: 74px;
+      // aspect-ratio: 1;
+      background-image: linear-gradient(#252830 0%, #1E2127 100%);
+      border-radius: 20px;
+      position: relative;
+      border: 1px solid #242830;
+      cursor: pointer;
+
+      transition: transform 400ms ease;
+      will-change: transform;
+
+      &:not(.mines-game__card--picked) {
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+
+      svg {
+        position: absolute;
+        max-width: 30px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.85);
+        fill: var(--icon-clr);
+
+        transition: all 400ms ease;
+        will-change: transform, opacity;
+        z-index: 1;
+        opacity: 0;
+      }
+      &--picked {
+        svg {
+          opacity: 1;
+          transform: translate(-50%, -50%) scale(1);
+        }
+        &::after {
+          opacity: 1 !important;
+        }
+      }
+      &--green {
+        --icon-clr: #78C886;
+        --bg: linear-gradient(-120deg, #165521 0%, #65C577 100%);
+      }
+      &--red {
+        --icon-clr: #642220;
+        --bg: linear-gradient(-120deg, #792825 0%, #D85550 100%);
+      }
+      &::after {
+        @include pseudo;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-image: var(--bg);
+        border-radius: inherit;
+        pointer-events: none;
+        transition: opacity 400ms ease;
+        opacity: 0;
+      }
+      &::before {
+        @include pseudo;
+        width: 24px;
+        height: 30px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-image: url("../img/icons/mineLogoIcon.svg");
+        background-size: 100% 100%;
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+@include desktop {
+  .mines {
+    &-game {
+      display: block;
+      &__grid {
+        grid-template-columns: repeat(auto-fill, minmax(54px, 1fr));
+        grid-gap: 12px;
+      }
+      &__col {
+        display: none;
+      }
+      &__card {
+        border-radius: 14px;
+        min-height: auto;
+        aspect-ratio: 1;
+
+        img, svg {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+}
+
+@include small-tablet {
+  .mines {
+    .box {
+      padding: 14px;
+    }
+    &-game {
+      &__card {
+        min-height: 56px;
+      }
+    }
+  }
+}

@@ -1,0 +1,216 @@
+
+.chat {
+  position: fixed;
+  height: 100%;
+  right: 0;
+  top: 0;
+  width: var(--chat-w);
+  --p: 20px;
+
+  background-color: var(--bg-chat);
+  border-left: 1px solid rgba(var(--g-border-clr), 1);
+
+  &-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  &-header {
+    padding: 24px var(--p);
+    border-bottom: 1px solid rgba(var(--g-border-clr), 1);
+  }
+  &-tape {
+    padding: var(--p);
+    flex: 1;
+    overflow-y: auto;
+    position: relative;
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 4px;
+      background-color: #51665A;
+    }
+    // &::after {
+    //   @include pseudo;
+    //   width: 100%;
+    //   height: 64px;
+    //   background-image: linear-gradient(to bottom, var(--bg-chat), transparent);
+    //   top: 0;
+    //   left: 0;
+    //   z-index: 1;
+    // }
+  }
+  &-footer {
+
+    input {
+      background-color: #1B1E24;
+      padding: 24px;
+      width: 100%;
+      border: none;
+      outline: none;
+      font-size: 11px;
+      color: rgba(var(--clr-w), 1);
+      &::placeholder {
+        color: #596070;
+      }
+    }
+  }
+  &-promo {
+    border: clamp(2px, 0.25vw, 4px) solid #51665A;
+    border-radius: 20px;
+    padding: clamp(24px, 2.125vw, 34px);
+    background-color: #3F5247;
+    &__heading {
+      color: rgba(var(--clr-green), 1);
+      font-weight: 900;
+      font-size: 13px;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 16px;
+    }
+  }
+  &-counter {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    grid-gap: 7px;
+    &__dots {
+      color: #433614;
+      opacity: .5;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    &__unit {
+      display: flex;
+      align-items: center;
+      grid-gap: 6px;
+    }
+    &__item {
+      min-height: 36px;
+      @include dfc;
+      text-align: center;
+      padding: 0 6px;
+      background-color: rgba(var(--clr-green), .25);
+      min-width: 28px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 900;
+      color: rgba(var(--clr-green), 1);
+    }
+  }
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 20px;
+  &-item {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    grid-gap: 20px;
+  }
+  &-avatar {
+    width: 48px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    background-color: #212636;
+
+    &::after {
+      @include pseudo;
+      width: 18px;
+      height: 18px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-image: url("../img/icons/userIcon.svg");
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      pointer-events: none;
+      z-index: 1;
+    }
+    & > * {
+      z-index: 2;
+    }
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+  }
+  &-post {
+    padding: 12px 20px;
+
+    img {
+      max-width: 100px;
+    }
+  }
+  &-user {
+    display: flex;
+    align-items: center;
+    grid-gap: 8px;
+    &__name {
+      font-size: 12px;
+      font-weight: 500;
+    }
+    &__rank {
+      font-weight: 500;
+      text-transform: uppercase;
+      padding: 2px 12px;
+      min-height: 26px;
+      @include dfc;
+    }
+  }
+  &-promo {
+    color: rgba(var(--clr-r), 1);
+    font-size: 11px;
+    font-weight: 500;
+  }
+  &-block {
+    background-color: #242730;
+    border-radius: 24px;
+    width: fit-content;
+    font-size: 10px;
+    color: #B1B5C2;
+  }
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  &-date {
+    font-size: 9px;
+    color: #424650;
+  }
+}
+
+@include laptop {
+  .chat {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    height: calc(100% - var(--header-h));
+    top: var(--header-h);
+    left: 0;
+    z-index: 5;
+    &-container {
+      padding-bottom: 158px;
+    }
+    opacity: 0;
+    pointer-events: none;
+    transition: all 400ms ease;
+
+    &--opened {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+}
